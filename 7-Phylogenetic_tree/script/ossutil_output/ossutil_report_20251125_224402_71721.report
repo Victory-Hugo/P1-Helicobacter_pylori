@@ -1,1 +1,0 @@
-# ossutil sync /mnt/f/D1_Obsidian_publish/ oss://obsidian-publisher/D1_Obsidian_publish/ --delete --update --job 20
