@@ -1,4 +1,4 @@
-修改我给出的所有的文件：
-1. 要求将所有的中文翻译为英文（包括注释和打印内容）。
-2. 要求将可能追溯到本机的绝对路径改为相对路径
-3. 要求不改变任何功能。
+Please modify all the files I provided:
+1. Translate all Chinese text into English (including comments and printed output).
+2. Replace any absolute paths that may trace back to this machine with relative paths.
+3. Do not change any functionality.
