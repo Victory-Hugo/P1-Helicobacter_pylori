@@ -7,7 +7,7 @@ set -euo pipefail
 
 # Variable definitions for easier reuse
 
-INPUT_DIR="input"
+INPUT_DIR="example"
 SCRIPT_DIR="12-GWAS/script"
 MERGE_FASTA_DIR="merge_fasta"
 PYTHON3="python3"
