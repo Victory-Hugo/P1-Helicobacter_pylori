@@ -14,7 +14,7 @@ data <- lin_loc(
   prefix = prefix, 
   gem.path = gem.path, 
   creatingAllPlots = FALSE
-)  # 执行GWAS分析
+)  # Run GWAS analysis
 
 # save(data, file = "data_GWAS.RData")  # Save GWAS analysis output
 
@@ -24,7 +24,7 @@ all_plots(
   genVars = data$genVars, 
   treeInfo = data$treeInfo, 
   config = data$config
-)  # 生成相关图像
+)  # Generate figures
 
 ###################################
 ## Post-processing
