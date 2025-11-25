@@ -1,0 +1,93 @@
+
+
+Changelog for FineSTRUCTURE version 4:
+	4.1.1 (22/05/2020)
+	* Parallel code: the previous version (4.1.0) introduced a bug where fs would not run in parallel! It now runs in parallel.
+
+	4.1.0 (01/04/2020)
+	* Dependency removed: no gsl, no zlib dependencies. Should run out of the box on all systems; for linux since 2012. For mac, there is a GCC and a mac clang version.
+	* Bugfixes
+
+	4.0.1 (31/01/2020)
+	* finestructure (fs fs) help correction; initial populations default to the number of individuals, not 1.
+
+	4.0.0 (04/02/2019)
+	* binary release for compilation problems.
+	* chromocombine (fs cp) now supports the "-c" flag which allows combining of datasets that do not have chunkcounts, which is useful for advanced merging.
+	* chromopainter I/O memory update, which should improve crashes experienced by some when using local parallelization.
+	* plink2chromopainter.pl handles odd chromosome names better.
+
+Changelog for FineSTRUCTURE version 2:
+
+	2.1.3 (25/10/2017)
+	* plink2chromopainter.pl now handles missing data!
+	* example4->FinestructureExample.R contained calls to plot.dendrogram that won't work in recent versions of R. The correct call is fs.plot.dendrogram.
+
+	2.1.2 (06/06/2017)
+
+	* SNP_subsampling was incorrectly handled via the -l flag. This important bug has been fixed. It could have effected EM parameter estimation (though not badly) and certainly broke any usage of -l.
+	* plink2chromopainter.pl has been improved significantly.
+	* phasesubsample.pl had a relatively minor bug which caused an out-by-one error, i.e. it would grab the slightly wrong snp set.
+	* FinestructureExample.R was updated in 2.1.1, noted here for completeness.
+
+	2.1.1 (31/01/2017)
+
+	* MissingData is now correctly handled, via the codes 9, N and ? in the phase file. IMPORTANT: Previously the code ran but gave the wrong answer! Rerun any missing data scenario that you have worked with!
+	* Bugfix: The tree files were reported in the wrong place, meaning that copy/paste of the suggested finegui command resulted in problems reading the tree.
+
+	2.1.0
+
+	* Licence update. FS is also NOT FREE SOFTWARE and uses the same license as ChromoPainter. (It is free for academic use and always will be).
+
+	2.0.8 (4/2016)
+
+	* Corrected the licence file COPYING. ChromoPainter is NOT FREE SOFTWARE and therefore the fs package as a whole is NOT FREE SOFTWARE. Read COPYING for details.
+	* Added missing data via code 9 or N
+	* Bugfix: set a minimum value of rho, which should eliminate "Negative or NaN likelihood" error in chromopainter
+	* Added POBI concordance step.
+	* Added extract a popidfile from an mcmc state (-e popid)
+	* Changed the help: firstly, simplified it to the essentials. Secondly, added -H to view the details.
+	* Added -s2combineargs, most clearly useful for providing the -C option to fs combine (for using whole genomes as regions to estimate c)
+	* Bugfix: fixed a sorting error with unsorted phasefiles.
+	* Bugfix: fixed a rare issue with commands that have multiple spaces between options.
+
+	2.0.8pre (12/2015)
+
+	* Nicety improvements:
+        * Organised the directory structure, to prevent there being too many files in a single directory.
+        * Check the sorting of phase files, so we insist that they actually correspond to chromosome ordering.
+        * Improved the information in hpc mode; we are given the number of commands in the file, and how to run it is clear. We also recommend how to run qsub_run.sh.
+	* Added the examples to the manual and added the HGDP example.
+	* Added the "allowdep" parameter to disable dependency resolution, which is helpful for pipelines.
+	* Added the -hpcs3 command, which is automatically used when appropriate, to generate appropriate command lines in stage 3 to run mcmc until convergence. (Requires parallel run)
+	* Fixed a bug in the Gelman-Rubin statistic calculation in which no variance in K meant that the whole GR statistic passed the threshold.
+
+	2.0.7 (09/2015)
+	* Changed the way the .cp file was generated. Previously it was only updated after a successful exit. Now it is updated after every action, making a run much easier to both continue and debug after it is killed.
+	* Fixed the documentation for finestructure extractions.
+	* Fixed a bug in ChromoCombine leading to that step failing!
+
+	2.0.6 (08/2015)	Made the default to ***ignore ChromoPainter log-likelihood errors*** to allow estimation with some invalid samples.
+	* Added -s2samples <n> flag to allow the easy creation of samples from stage2 analyses.
+	* Error checking for duplicated individual labels. Useful advice for ploidy problems.
+	* Made ignoring OPENMP for Mac installation better (i.e. work)
+	* Added -hpc 2 flag to allow the easy creation of what commands would be run on an HPC machine, whilst having them run locally. (Useful for modifying commands for advanced things)
+	* Populate -s2combine log.
+	* Corrected errors in the manual: fs cp -s was incorrect, impute2chromopainter.pl documentation was missing, a few other minor errors. Attempted to make it clear that multiple data files are OK.
+	* Fixed a bug with the history reporting in the settings "<x>.cp" file.
+
+	2.0.5 (04/2015) Also, changed the configure script (automake) to look for GSL differently, due to problems compiling on gentoo linux.
+
+	2.0.5 (04/2015) ChromoCombine made to handle donor files. Note that the ChromoPainter included in this release still does not!
+
+	2.0.4 (04/2015) Also, fixed a compilation error in chromocombine.
+
+	2.0.4 (04/2015) Fixed a massive bug with OpenMP header detection.
+
+	2.0.3 (02/2015) Typos & updated version of qsub_run.sh.
+
+	2.0.2 (02/2015) Haploid organisms were incorrectly handled, resulting in a crash. Compilation on machines missing OpenMP is now possible, in single threaded mode.
+
+	2.0.1 (12/2014) Error handling: Previously a bug existed where runtime errors would result in a segfault. These are now correctly identified and reported to the user.
+
+	2.0.0 First Release

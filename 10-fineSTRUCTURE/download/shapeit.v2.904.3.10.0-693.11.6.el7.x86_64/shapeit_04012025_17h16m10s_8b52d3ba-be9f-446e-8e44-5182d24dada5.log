@@ -1,0 +1,4 @@
+Mode    : Phaser
+Options : -V /mnt/d/幽门螺旋杆菌/Script/分析结果/merged_vcf/filter/merged_biallelic_filtered.recode.vcf -O phased_biallelic --input-map /mnt/d/幽门螺旋杆菌/Script/分析结果/fineSTRUCTURE/genetic_map.txt --thread 4
+
+ERROR: /mnt/d/幽门螺旋杆菌/Script/分析结果/fineSTRUCTURE/genetic_map.txt is impossible to open, check file existence or reading permissions

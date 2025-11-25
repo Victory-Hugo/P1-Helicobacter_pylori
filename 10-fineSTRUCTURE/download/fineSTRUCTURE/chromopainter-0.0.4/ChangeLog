@@ -1,0 +1,8 @@
+Package creation date: Fri Apr 19 21:29:20 BST 2013
+19/4/2013: Fixed compilation bugs for the gui: check for lpthread and made jitter_locations extern.
+2/4/2013: Upgrade to version 0.0.4. Helpful fix for poorly constructed SNP locations, as seemingly often output by pipelines involving SHAPEIT, allowing a) an helpful error when SNP locations are not structured as expected (neighbouring SNPs can sometimes be equal), and b) the "-J" option to "jitter" SNP locations (by single bases) to make them valid.
+6/3/2013: Upgrade to version 0.0.3. Minor compilation related bugfixes.
+17/9/2012: Upgrade to version 0.0.2. Numerous bugfixes including a
+	critical bugfix when using a haplotype input file
+	with more donor haplotypes than SNPs.
+OLDER: Undocumented bugfixes.

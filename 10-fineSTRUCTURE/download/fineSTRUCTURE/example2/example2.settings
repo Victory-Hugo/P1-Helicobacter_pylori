@@ -1,0 +1,18 @@
+##### Some settings we'll set manually
+
+s3iters:60000 # number of MCMC iterations (burnin + sampling)
+s4iters:10000 # number of Tree iterations
+## The following have good defaults for very large datasets, but are too conservative for our simple example.
+s1minsnps:1000 # minimum number of SNPs used for chromopainter parameter estimation. Set it well above the number of snps in a chunk
+s1indfrac:0.1 # the fraction of individuals we analyse per chromosome
+
+## Define the data
+# idfile: this is essential
+idfile:Europe.small.ids
+
+# phasefile(s): this is also essential. Setting it via -phasefiles on the command line is often easier (see example 1b)
+# We also set recombfiles which enables linked analysis mode
+# Also note that you can swap commas for spaces. Spaces must be escaped, i.e. 'file\ name.phase' will be correctly processed, 'file name.phase' will not!
+phasefiles:EuropeSample.small.chrom10.phase,EuropeSample.small.chrom11.phase,EuropeSample.small.chrom12.phase,EuropeSample.small.chrom13.phase,EuropeSample.small.chrom14.phase,EuropeSample.small.chrom15.phase,EuropeSample.small.chrom16.phase,EuropeSample.small.chrom17.phase,EuropeSample.small.chrom18.phase,EuropeSample.small.chrom19.phase,EuropeSample.small.chrom1.phase,EuropeSample.small.chrom20.phase,EuropeSample.small.chrom21.phase,EuropeSample.small.chrom22.phase,EuropeSample.small.chrom2.phase,EuropeSample.small.chrom3.phase,EuropeSample.small.chrom4.phase,EuropeSample.small.chrom5.phase,EuropeSample.small.chrom6.phase,EuropeSample.small.chrom7.phase,EuropeSample.small.chrom8.phase,EuropeSample.small.chrom9.phase
+recombfiles:EuropeSample.small.chrom10.recombfile,EuropeSample.small.chrom11.recombfile,EuropeSample.small.chrom12.recombfile,EuropeSample.small.chrom13.recombfile,EuropeSample.small.chrom14.recombfile,EuropeSample.small.chrom15.recombfile,EuropeSample.small.chrom16.recombfile,EuropeSample.small.chrom17.recombfile,EuropeSample.small.chrom18.recombfile,EuropeSample.small.chrom19.recombfile,EuropeSample.small.chrom1.recombfile,EuropeSample.small.chrom20.recombfile,EuropeSample.small.chrom21.recombfile,EuropeSample.small.chrom22.recombfile,EuropeSample.small.chrom2.recombfile,EuropeSample.small.chrom3.recombfile,EuropeSample.small.chrom4.recombfile,EuropeSample.small.chrom5.recombfile,EuropeSample.small.chrom6.recombfile,EuropeSample.small.chrom7.recombfile,EuropeSample.small.chrom8.recombfile,EuropeSample.small.chrom9.recombfile
+

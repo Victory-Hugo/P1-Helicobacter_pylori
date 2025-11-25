@@ -1,0 +1,55 @@
+TOPICS:
+
+1. REQUIREMENTS
+2. INSTALLATION (short version)
+3. FURTHER INFORMATION
+4. LICENCE
+
+0. LICENCE
+
+IMPORTANT: THIS SOFTWARE PACKAGE CONTAINS TWO PIECES OF SOFTWARE. EACH PIECE OF SOFTWARE HAS A DIFFERENT AUTHOR.
+
+Finestructure (fs v4) is free for Academic Use Only, under the terms included as LICENSE-FS. fs (finestructure) is written by Daniel Lawson (dan.lawson@bristol.ac.uk). 
+
+ChromoPainter (fs cp) is also free for Academic Use Only, under the terms included as LICENSE-CP. ChromoPainter (the tool called by fs cp and used by fs) is written by Garrett Hellenthal (ghellenthal@googlemail.com).
+
+They are included together for convenience only. THEY ARE SEPARATELY LICENCED PIECES OF SOFTWARE. Both licences allow the same use, and are free for academic use.
+
+Read the LICENSES for details.
+
+1. REQUIREMENTS
+
+We have attempted to reduce the requirements to a minimum. If you encounter any problems let us know.
+
+For Linux, you need GLIBC 2.3 or greater. You probably have this already.
+
+For Mac, you need GCC for the parallel version. For the clang version you should only need the system libraries.
+
+2. INSTALLATION
+
+Short version: enter this directory and run:
+> fs_install.sh
+
+Longer version: you simply need to put the correct compiled version of fs into your PATH. It is recommended that you rename it to "fs". The install script chooses the best version for you. It only works for bash environments with a ~/.bashrc file.
+
+You can skip this step if you know what you are doing and add fs to your path manually, or you want to have to specify it each time. You may need the -exec command to do this in hpc mode.
+
+On mac, avoid the clang version if possible as it does not run in parallel.
+
+3. FURTHER INFORMATION
+
+You need to prepare your data in CHROMOPAINTER format. This is nearly the same as PHASE format, but HAS BEEN UPDATED since chromopainter v 0.0.5.
+
+Run "fs" for help. Examples are included in the "examples" directory; it is recommended to work through the examples to establish how to run this program on your own dataset.
+
+Run "fs" -V for version info.
+
+example4/FinestructureExample.R is a very important example of how to use the included FinestructureLibrary.R file for visualisation.
+
+IMPORTANT: If you have a small dataset, you can run 
+"fs project -phasefile <data> -recombfile <recombination map file> -go"
+and it will do everything with default settings that should work. BUT IF YOU HAVE A LARGE DATA SET THIS IS GOING TO TAKE A LONG LONG TIME. You will want to parallelise the work, which is done with the "-hpc" flag. You can then run commands on your own HPC or in parallel on a multi-core machine.
+
+The examples show you how to do this!
+
+www.paintmychromosomes.com is the place to start for help.  Visit the FAQ page for standard issues.
